@@ -90,7 +90,8 @@ public class control {
             num2 = Double.parseDouble(part2);
             result = num1 * num2;
             txtDisplay.setText(result.toString());
-// Date- 6/11/2022   8:34pm            
+// Date- 6/11/2022   8:34pm 
+// Trigononometric functions            
         } else if(newText.contains("SIN")){
             String[] parts=newText.split("N");
             String part2=parts[1];
