@@ -19,7 +19,7 @@ public class control {
 
     private TextField txtDisplay;//=new TextField();
     //you can not write in textfield
-    //txtDisplay.setEditable();
+    //txtDisplay.setEditable(false);
 
 
     //@Override
@@ -90,7 +90,114 @@ public class control {
             num2 = Double.parseDouble(part2);
             result = num1 * num2;
             txtDisplay.setText(result.toString());
+// Date- 6/11/2022   8:34pm            
+        } else if(newText.contains("SIN")){
+            String[] parts=newText.split("N");
+            String part2=parts[1];
+//            if(part2=="π"){
+//                part2="180";
+//            }
+            if(Objects.equals(part2, "PI")){
+                part2="0";
+            }else if(Objects.equals(part2, "180")){
+                part2="0";
+            }
+            int num=Integer.parseInt(part2);
+            double radiuns=Math.toRadians(num);
+            result=Math.sin(radiuns);
+            txtDisplay.setText(result.toString());
+
+        } else if (newText.contains("cosec")) {
+            String[] parts=newText.split("ec");
+            String part2=parts[1];
+//            String newstr = null;
+//            if(part2=="π"){
+//                newstr="180";
+//            }
+            if(Objects.equals(part2, "PI")){
+                part2="0";
+            }else if(Objects.equals(part2, "180")){
+                part2="0";
+            }
+            int num=Integer.parseInt(part2);
+            double radiuns=Math.toRadians(num);
+            double rev =Math.sin(radiuns);
+//            result=1/rev;
+//            txtDisplay.setText(result.toString());
+            String newstr=null;
+            Double ans;
+            if(rev==0.0) {
+                newstr="Undefined";
+                txtDisplay.setText(newstr.toString());
+            }else{
+                ans=1/rev;
+                txtDisplay.setText(ans.toString());
+            }
+        }else if(newText.contains("COS")){
+            String[] parts=newText.split("S");
+            String part2=parts[1];
+//            if(part2=="π"){
+//                part2="180";
+//            }
+            if(Objects.equals(part2, "PI")){
+                part2="180";
+            }
+            int num=Integer.parseInt(part2);
+            double radiuns=Math.toRadians(num);
+            result=Math.cos(radiuns);
+            txtDisplay.setText(result.toString());
+        } else if (newText.contains("TAN")) {
+            String[] parts=newText.split("N");
+            String part2=parts[1];
+//            if(part2=="π"){
+//                part2="180";
+//            }
+            if(Objects.equals(part2, "PI")){
+                part2="0";
+            }else if(Objects.equals(part2, "180")){
+                part2="0";
+            }
+            int num=Integer.parseInt(part2);
+            double radiuns=Math.toRadians(num);
+            result=Math.tan(radiuns);
+            txtDisplay.setText(result.toString());
+        }else if(newText.contains("cot")){
+            String[] parts=newText.split("t");
+           String part2=parts[1];
+//            if(part2=="π"){
+//                part2="180";
+//            }
+            if(Objects.equals(part2, "PI")){
+                part2="0";
+            }else if(Objects.equals(part2, "180")){
+                part2="0";
+            }
+            int num=Integer.parseInt(part2);
+            double radiuns=Math.toRadians(num);
+            double rev=Math.tan(radiuns);
+            String newstr=null;
+            Double ans;
+            if(rev==0.0) {
+                newstr="Undefined";
+                txtDisplay.setText(newstr.toString());
+            }else{
+                ans=1/rev;
+                txtDisplay.setText(ans.toString());
+            }
+            //txtDisplay.setText(result.toString());
+        }else if(newText.contains("sec")){
+            String[] parts=newText.split("c");
+            String part2=parts[1];
+            if(Objects.equals(part2, "PI")){
+                part2="180";
+            }
+            int num=Integer.parseInt(part2);
+            double radiuns=Math.toRadians(num);
+            double rev=Math.cos(radiuns);
+            result=1/rev;
+            txtDisplay.setText(result.toString());
         }
+     
         resultOperation = true;
 
     }
