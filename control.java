@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import java.util.*;
 
 
 public class control {
@@ -50,6 +51,13 @@ public class control {
         currentOperation = ((Button) event.getSource()).getText();
         txtDisplay.setText(currentDigit + currentOperation);
 
+    }
+    //function for seting up textfield for trigo functions
+   public void handle_trigo_operations(ActionEvent actionEvent) {
+        txtDisplay.clear();
+        String text= ((Button) actionEvent.getSource()).getText();
+        txtDisplay.setText(text);
+        resultOperation=false;
     }
 
     @FXML
